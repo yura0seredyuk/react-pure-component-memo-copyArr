@@ -11,9 +11,9 @@ export const User = React.memo(
         His friends are: 
         <ul>
           {people.map(friend => (
-            <li>
+            <li key={friend}>
               {friend}
-              </li>
+            </li>
           ))}
         </ul>
       </div>
@@ -21,7 +21,7 @@ export const User = React.memo(
   }
 )
 
-User.PropTypes = {
+User.propTypes = {
   name: PropTypes.string.isRequired,
   age: PropTypes.number.isRequired,
   people: PropTypes.arrayOf(PropTypes.string)
